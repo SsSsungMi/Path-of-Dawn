@@ -3,9 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 종류 9 개
-// { 기본 공격력 증가, 스킬 공격력 증가, 방어력 증가, 우선순위 증가, 랜덤 적 1명 스턴,
-//   지속 치유, 마나 재생, 최대 Hp 증가, 골드 획득량 증가 (방어력 감소) }
+// 종류 4 개
+// { 공격력 증가, 방어력 증가, 우선순위 증가, 최대 Hp 증가}
 
 
 public class BuffController : MonoBehaviour

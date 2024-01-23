@@ -11,37 +11,38 @@ public class BuffInfo : MonoBehaviour
     public void Awake()
     {
         controller = this.GetComponentInParent<BuffController>();
+        Init();
+
+        controller.buffSelectOut += () => { Init(); };
+    }
+
+    public void Init()
+    {
         for(int i = 0; i < buffs.Length; i++)
         {
             buffs[i].gameObject.SetActive(false);
         }
     }
-
     public void SetBuffSelectZone()
     {
         controller.buffSelectIn();
         RandomItem();
     }
-
     public virtual void BuffSelect()
-    {
-        //controller.buffSelectOut();
-    }
-
+    {    }
     public void RandomItem()
     {
         int[] randomItem = new int[3];
         while (true)
         {
-            randomItem[0] = Random.Range(0, 3);
-            randomItem[1] = Random.Range(0, 3);
-            randomItem[2] = Random.Range(0, 3);
+            randomItem[0] = Random.Range(0, 4);
+            randomItem[1] = Random.Range(0, 4);
+            randomItem[2] = Random.Range(0, 4);
 
             if (randomItem[0] != randomItem[1] && randomItem[1] != randomItem[2]
                 && randomItem[0] != randomItem[2])
                 break;
         }
-
         for (int i = 0; i < randomItem.Length; i++)
         {
             BuffInfo ranItem = buffs[randomItem[i]];

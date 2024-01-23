@@ -27,6 +27,8 @@ public class UICamController : MonoBehaviour
 
         Vector3 pos = new Vector3(pivots[curPivot].position.x, pivots[curPivot].position.y, posZ);
         transform.position = pos;
+
+        SoundManager.instance.BgmPlay(curPivot);
     }
 
     public void SetCamPostion(int num)
@@ -37,7 +39,8 @@ public class UICamController : MonoBehaviour
         Vector3 pos = new Vector3(pivots[num].position.x, pivots[num].position.y, posZ);
         transform.position = pos;
 
+        SoundManager.instance.BgmPlay(num);
     }
 }
 
-        // SoundManager.intance.Play(num);
+        
